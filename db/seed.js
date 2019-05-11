@@ -40,6 +40,10 @@ const seedDb = ( bizCount = 100 ) => {
         const len = fullReviews.length;
         const getReview = () => fullReviews[getRandom(0,0,len)];
         for (let i = 1; i <= bizCount; i++) {
+          // For loop to generate variable length of reviews
+          // Push reviews into promise to be saved into DB at one time
+          // Retrieve all reviews upon finishing
+          // Create script in package.json
           let review = {
             uId: getRandom(1, 0, 99),
             bId: i,
@@ -57,7 +61,7 @@ const seedDb = ( bizCount = 100 ) => {
   })
   .catch((err) => console.log(err))
 };
-seedDb(10);
+seedDb();
 
 const getRandom = (start, startInc = 5, endInc = 8) => {
   start += startInc;
