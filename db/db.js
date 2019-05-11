@@ -11,24 +11,24 @@ const reviewSchema = new mongoose.Schema({
   useful: [], // Contains the users([Username,UserID]) who thought review was useful
   funny: [], // Contains the users([Username,UserID]) who thought review was funny
   cool: [], // Contains the users([Username,UserID]) who thought review was cool
-});
+}, { timestamps: true });
 
 const Review = mongoose.model('Review', reviewSchema);
 
 const saveReview = (data) => {
-  let instance = Review(data);
-  instance.save( (err, review) => {
-    if(err) return console.log(err);
-    console.log(`Review ${review.uId} successful`);
+  return new Promise ((resolve,reject) => {
+    Review.insertMany(data)
+    .then((docs) => resolve(docs))
+    .catch((err) => reject(err))
   });
 };
 
 const retrieveAllReviews = (callback) => {
-  Review.find({})
-  .then((data) => {
-    console.log(data);
-    callback(data);
-  })
+  return new Promise ((resolve, reject) => {
+    Review.find({})
+    .then((data) => resolve(data))
+    .catch((err) => reject(err))
+  });
 };
 
 module.exports.retrieveAllReviews = retrieveAllReviews;
