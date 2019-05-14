@@ -87,3 +87,5 @@ const generateUsers = () => {
   }
   return users;
 };
+
+module.exports.seedDb = seedDb;

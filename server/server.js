@@ -2,12 +2,15 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
+const { retrieveByBiz } = require('../db/db.js');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/reviews/business/:bId', (req, res) => {
-  let bizID = req.params.bId;
-  res.send(`Success' ${bizID}`);
+  let { bId } = req.params;
+  retrieveByBiz(bId).then((reviews) =>{
+    res.send({reviews});
+  })
 });
 
 app.get('/reviews/user/:uId', (req, res) => {
