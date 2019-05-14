@@ -39,6 +39,24 @@ const retrieveByBiz = (bId) => {
   });
 };
 
+const retrieveByUser = (uId) => {
+  return new Promise ((resolve, reject) => {
+    Review.find({ uId })
+    .then((data) => resolve(data))
+    .catch((err) => reject(err))
+  });
+};
+
+const retrieve1Review = (rId) => {
+  return new Promise ((resolve, reject) => {
+    Review.find({ rId })
+    .then((data) => resolve(data))
+    .catch((err) => reject(err))
+  });
+};
+
 module.exports.retrieveAllReviews = retrieveAllReviews;
 module.exports.saveReview = saveReview;
 module.exports.retrieveByBiz = retrieveByBiz;
+module.exports.retrieveByUser = retrieveByUser;
+module.exports.retrieve1Review = retrieve1Review;
