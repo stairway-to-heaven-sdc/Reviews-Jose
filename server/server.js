@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
 const { retrieveByBiz, retrieveByUser, retrieve1Review } = require('../db/dbReviews');
+const { saveUsers, retrieveUsersById } = require('../db/dbUsers');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -40,5 +41,24 @@ app.get('/reviews/summation/:bId', (req, res) => {
   });
 });
 
+app.get('/users/', (req, res) => {
+  let { uIds } = req.body;
+  uIds = JSON.parse(uIds);
+  retrieveUsersById(uIds)
+  .then((users) => {
+    res.send(users);
+  })
+  .catch((err) => console.log(err));
+});
+
+app.post('/users/newuser', (req, res) => {
+  let { uId } = req.body;
+  uId = JSON.parse(uId);
+  saveUsers(uIds)
+  .then((users) => {
+    res.send(users);
+  })
+  .catch((err) => console.log(err));
+});
 
 app.listen(port, () => console.log(`App listening on port: ${port}`));
