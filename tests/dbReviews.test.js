@@ -1,10 +1,10 @@
-const { retrieveByBiz, retrieveByUser, retrieveAllReviews } = require('../db/db');
+const { retrieveByBiz, retrieveByUser, retrieveAllReviews } = require('../db/dbReviews');
 
 let bizResults;
 let userResults;
 let allReviews;
 
-describe('Database fn to Retrieve by business id', () =>{
+describe('Database fn to Retrieve by business id', () => {
   beforeAll((done) => {
     let getRandom = (min, max) => Math.ceil(Math.random() * (max - min) + min);
     let num = getRandom(0,101);
@@ -13,7 +13,7 @@ describe('Database fn to Retrieve by business id', () =>{
       bizResults = data;
       done();
     });
-  })
+  });
 
   test('returns a result', () => {
     expect(bizResults).toBeTruthy();
