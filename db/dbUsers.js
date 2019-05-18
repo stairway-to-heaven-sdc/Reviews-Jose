@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/fec', {useNewUrlParser: true });
 
 const usersSchema = new mongoose.Schema({
-uId: Number,
-username: String,
-city: String,
-state: String,
-photo: String,
-friends: [],
+  uId: Number,
+  username: String,
+  city: String,
+  state: String,
+  photo: String,
+  friends: [],
 });
 
 const User = mongoose.model('User', usersSchema);
@@ -20,11 +20,13 @@ const saveUsers = (data) => {
   });
 };
 
-const retrieveUserInfo = (uId) => {
+const retrieveUsersById = (uIds) => {
   return new Promise ((resolve, reject) => {
-
+    User.find({ 'uId': { $in: uIds } })
+    .then((users) => resolve(users))
+    .catch((err) => reject(err));
   });
 };
 
 module.exports.saveUsers = saveUsers;
-module.exports.retrieveUserInfo = retrieveUserInfo;
+module.exports.retrieveUsersById = retrieveUsersById;
