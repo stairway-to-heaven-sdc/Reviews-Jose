@@ -6,6 +6,7 @@ const { retrieveByBiz, retrieveByUser, retrieve1Review } = require('../db/dbRevi
 const { saveUsers, retrieveUsersById } = require('../db/dbUsers');
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 app.get('/reviews/business/:bId', (req, res) => {
   let { bId } = req.params;
