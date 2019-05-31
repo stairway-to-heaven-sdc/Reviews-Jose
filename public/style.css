@@ -4,3 +4,36 @@ li {
 ul {
   list-style-type: none;
 }
+
+.i-stars {
+  background: url("https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_design_web/9b34e39ccbeb/assets/img/stars/stars.png") no-repeat;
+  background-size: 132px 560px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.i-stars--10 {
+  width: 102px;
+  height: 18px;
+  background-position: 0 -258px;
+}
+.i-stars--20 {
+  width: 102px;
+  height: 18px;
+  background-position: 0 -294px;
+}
+.i-stars--30 {
+  width: 102px;
+  height: 18px;
+  background-position: 0 -330px;
+}
+.i-stars--40 {
+  width: 102px;
+  height: 18px;
+  background-position: 0 -366px;
+}
+.i-stars--50 {
+  width: 102px;
+  height: 18px;
+  background-position: 0 -402px;
+}
