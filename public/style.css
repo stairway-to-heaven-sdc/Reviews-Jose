@@ -1,7 +1,9 @@
 ul, li {
   list-style-type: none;
 }
-
+ul {
+  display: block;
+}
 div {
   display: block;
 }
@@ -125,4 +127,35 @@ p {
 .location {
   font-weight: bold;
   color: #333;
+}
+
+.review-footer {
+  white-space: nowrap;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: #666;
+}
+
+.voting {
+  margin-bottom: 12px;
+}
+.vote-item {
+  white-space: nowrap;
+  padding: 5px 8px;
+  background: #fff;
+  border: 1px solid #ccc;
+  background-image: none;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  /* transition: all 0.6s;
+    transition-property: background-color, background-position, background-size, border-color;
+    background-position: 50% 50%; */
+  margin-right: 6px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
 }

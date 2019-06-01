@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import * as Icon from './images/Icons.jsx'
 import axios from 'axios';
 
 const User = (props) => {

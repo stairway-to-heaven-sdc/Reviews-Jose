@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Icon from './images/Icons.jsx'
 
 const Review = (props) => {
   let { review } = props;
@@ -10,7 +11,23 @@ const Review = (props) => {
       <div className={rating}></div><span className="rating-date"> {date} </span>
       <p>{review.reviewText}</p>
     </div>
-    <div className="review-footer"></div>
+    <div className="review-footer">
+      <p>Was this review ...?</p>
+      <ul className="voting">
+        <li className="vote-item">
+          <span style={{width: '18px', height: '18px'}}> <Icon.useful /> </span>
+          <span>Useful</span>
+        </li>
+        <li className="vote-item">
+          <span style={{width: '18px', height: '18px'}}> <Icon.funny /> </span>
+          <span>Funny</span>
+        </li>
+        <li className="vote-item">
+          <span style={{width: '18px', height: '18px'}}> <Icon.cool /> </span>
+          <span>Cool</span>
+        </li>
+      </ul>
+    </div>
   </div>
 )};
 
