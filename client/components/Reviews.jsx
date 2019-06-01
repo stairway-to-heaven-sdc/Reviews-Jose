@@ -5,12 +5,14 @@ import Review from './Review.jsx';
 import User from './User.jsx';
 
 const Reviews = (props) => (
-  <ul className="reviews">
+  <ul className="list list-bordered">
     <li> < Compose /> </li>
     {props.reviews.map((review) => (
     <li key={review._id}>
-      < User user={review.uId} />
-      < Review review={review} />
+      <div className="user-with-review">
+        < User user={review.uId} />
+        < Review review={review} />
+      </div>
     </li>
     ))}
   </ul>

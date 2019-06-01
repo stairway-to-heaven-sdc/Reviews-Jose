@@ -43,8 +43,7 @@ app.get('/reviews/summation/:bId', (req, res) => {
 });
 
 app.get('/users/', (req, res) => {
-  let { uIds } = req.body;
-  uIds = JSON.parse(uIds);
+  let { uIds } = req.query;
   retrieveUsersById(uIds)
   .then((users) => {
     res.send(users);
