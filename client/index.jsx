@@ -23,9 +23,8 @@ class ReviewsService extends Component {
     let { reviews } = this.state;
     return(
       <div>
-        <h1>See ya Space Cowboy!</h1>
-        < Search />
-        < Reviews reviews={reviews} />
+        < Search bizName="Jang Guem Tofu and BBQ" />
+        < Reviews reviews={reviews} bizName="Jang Guem Tofu and BBQ"/>
       </div>
     )
   }

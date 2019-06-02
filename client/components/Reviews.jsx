@@ -6,7 +6,7 @@ import User from './User.jsx';
 
 const Reviews = (props) => (
   <ul className="list list-bordered">
-    <li> < Compose /> </li>
+    <li> < Compose bizName={props.bizName} /> </li>
     {props.reviews.map((review) => (
     <li key={review._id}>
       <div className="user-with-review">

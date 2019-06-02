@@ -1,13 +1,46 @@
+h1, h2, h3, h4, h5, h6, p, span {
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 ul, li {
   list-style-type: none;
 }
 ul {
   display: block;
+  padding: 0;
 }
 div {
   display: block;
 }
 
+h2 b {
+  font-weight: normal;
+  color: #333;
+}
+
+p {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 12px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.header {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 21px;
+  line-height: 1.28571em;
+  color: #d32323;
+}
 .user-with-review {
   margin:0 -15px;
   content: " ";
@@ -42,6 +75,7 @@ div {
 
 .rating-date {
   color: #666;
+  font-size: 14px;
   font-weight: normal;
 }
 
@@ -77,15 +111,6 @@ div {
   background-position: 0 -402px;
 }
 
-p {
-  margin-bottom: 12px;
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
 .photo-box-img {
   border-radius: 4px;
   vertical-align: middle;
@@ -99,6 +124,7 @@ p {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  color: #666;
 }
 
 .media-avatar {
@@ -141,6 +167,14 @@ p {
 .voting {
   margin-bottom: 12px;
 }
+
+.voting-intro {
+  font-size: 12px;
+  white-space: nowrap;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
 .vote-item {
   white-space: nowrap;
   padding: 5px 8px;
@@ -158,4 +192,39 @@ p {
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
+}
+.question {
+  color: #666;
+  background: #fff;
+  border: 1px solid #ccc;
+  background-image: none;
+  background-repeat: no-repeat;
+  transition: all 0.6s;
+  transition-property: background-color, background-position, background-size, border-color;
+  background-position: 50% 50%;
+  background-size: 15000px 15000px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid;
+  font-weight: bold;
+  text-align: center;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 1.28571em;
+  padding: 8px 19px 9px;
+  border-radius: 3px;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+  top: -.1em;
 }

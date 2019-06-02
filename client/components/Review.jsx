@@ -12,19 +12,19 @@ const Review = (props) => {
       <p>{review.reviewText}</p>
     </div>
     <div className="review-footer">
-      <p>Was this review ...?</p>
-      <ul className="voting">
+      <p className="voting-intro">Was this review ...?</p>
+      <ul className="voting" >
         <li className="vote-item">
-          <span style={{width: '18px', height: '18px'}}> <Icon.useful /> </span>
-          <span>Useful</span>
+          <span class="icon" style={{width: '18px', height: '18px'}}> <Icon.useful /> </span>
+          <span> Useful</span>
         </li>
         <li className="vote-item">
-          <span style={{width: '18px', height: '18px'}}> <Icon.funny /> </span>
-          <span>Funny</span>
+          <span class="icon" style={{width: '18px', height: '18px'}}> <Icon.funny /> </span>
+          <span> Funny</span>
         </li>
         <li className="vote-item">
-          <span style={{width: '18px', height: '18px'}}> <Icon.cool /> </span>
-          <span>Cool</span>
+          <span class="icon" style={{width: '18px', height: '18px'}}> <Icon.cool /> </span>
+          <span> Cool</span>
         </li>
       </ul>
     </div>
