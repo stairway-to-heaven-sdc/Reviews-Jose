@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "seed": "node db/seed.js",
+    "seed": "node db/seedReviews.js; node db/seedReviews.js",
     "start": "nodemon server/server.js",
     "build": "webpack -d --watch"
   },
