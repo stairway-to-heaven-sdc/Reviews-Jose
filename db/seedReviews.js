@@ -1,4 +1,4 @@
-const { saveReview } = require('./db');
+const { saveReview } = require('./dbReviews');
 const faker = require('faker');
 const axios = require('axios');
 

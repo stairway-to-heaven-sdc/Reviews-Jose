@@ -5,7 +5,7 @@ const Search = (props) => (
   <div className="top-row">
     <div className="Section1-Questions">
       <h2 className="header">Ask the Community</h2>
-      <div>Yelp users haven't asked any questions yet about <b>{props.bizName}.</b></div>
+      <div className="text">Yelp users haven't asked any questions yet about <b>{props.bizName}.</b></div>
       <div className="question">Ask a Question</div>
     </div>
     <div className="Section2-Reccommended">

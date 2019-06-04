@@ -22,7 +22,7 @@ class ReviewsService extends Component {
   render () {
     let { reviews } = this.state;
     return(
-      <div>
+      <div className="yelp-font">
         < Search bizName="Jang Guem Tofu and BBQ" />
         < Reviews reviews={reviews} bizName="Jang Guem Tofu and BBQ"/>
       </div>
@@ -30,4 +30,4 @@ class ReviewsService extends Component {
   }
 }
 
-ReactDOM.render(<ReviewsService /> ,document.getElementById('app'));
+ReactDOM.render(<ReviewsService /> ,document.getElementById('ReviewsService'));
