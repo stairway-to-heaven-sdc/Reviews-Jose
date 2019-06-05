@@ -4,11 +4,13 @@ import * as Icon from './images/Icons.jsx';
 
 const Search = (props) => (
   <div className="top-row">
+
     <div className="Section1-Questions">
       <h2 className="header">Ask the Community</h2>
       <div className="text">Yelp users haven't asked any questions yet about <b>{props.bizName}.</b></div>
       <div className="question">Ask a Question</div>
     </div>
+
     <div className="Section2-Recommended">
       <h2 className="header">Recommended Reviews <b>for {props.bizName}</b></h2>
       <div className="trust-banner">
@@ -19,7 +21,11 @@ const Search = (props) => (
           </div>
         </div>
       </div>
+    </div>
 
+    <div className="Section3-Search">
+      <div className="search-bar"></div>
+      <div className="yelp-sort"></div>
     </div>
   </div>
 );

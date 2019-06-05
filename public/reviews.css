@@ -1,5 +1,5 @@
 #super-container {
-  padding-top: 18px;
+  padding-top: 10px;
   padding-bottom: 36px;
 }
 .column {
@@ -21,7 +21,7 @@
 .content-container {
   width: 960px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 8px;
 }
 
 .layout-block {
@@ -303,7 +303,7 @@ h2.b {
   font-size: 14px;
 }
 
-.Section3-compose-review {
+.Section4-compose-review {
   padding-bottom: 80px;
 }
 .trust-banner {
@@ -339,4 +339,11 @@ h2.b {
 }
 .trust-highlight {
   color: #0073bb;
+}
+
+.Section3-Search {
+  margin-bottom: 6px !important;
+}
+.search-bar {
+  margin-right: 30px !important;
 }
