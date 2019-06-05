@@ -10,7 +10,7 @@ const User = (props) => {
     axios.get('/users/', body)
     .then(({data}) => setUser(data[0]));
   },[]);
-  let {username, city, state, friends, photo} = userInfo;
+  let {username, city, state, friends, photo, elite} = userInfo;
 
 
   return (
@@ -25,6 +25,9 @@ const User = (props) => {
         <div ><span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.friends /> </span> <b>5</b> friends </div>
         <div ><span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.reviewCount /> </span> <b>5</b> reviews </div>
         <div ><span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.photos /> </span>  <b>5</b> photos </div>
+        { elite &&
+        <div className="elite"> <span>{elite}</span> </div>
+        }
       </div>
     </div>
   </div>

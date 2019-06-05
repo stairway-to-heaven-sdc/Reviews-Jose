@@ -1,5 +1,6 @@
 let faker = require('faker');
 let axios = require('axios');
+let _ = require('lodash');
 let { saveUsers } = require('./dbUsers');
 require('dotenv').config();
 
@@ -19,6 +20,7 @@ const seedUsers = () => {
 const createUsers = (data) => {
   let users = [];
   let count = 1;
+  let eliteStatus = [`Elite'19`, '', ''];
     for (let key of data) {
       let user = {
         uId: count,
@@ -26,6 +28,7 @@ const createUsers = (data) => {
         city: faker.address.city(),
         state: faker.address.stateAbbr(),
         photo: key.photo,
+        elite: _.sample(eliteStatus),
       };
       users.push(user);
       count++;
