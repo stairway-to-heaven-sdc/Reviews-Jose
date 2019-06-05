@@ -9,6 +9,12 @@ const Review = (props) => {
   <div className="review-wrapper yelp-font">
     <div className="review-content">
       <div className={rating}></div><span className="rating-date"> {date} </span>
+      { review.checkin === true &&
+      <div className="checkin">
+        <span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.checkin /> </span>
+        <span > 1 check-in</span>
+      </div>
+      }
       <p className="text">{review.reviewText}</p>
     </div>
     <div className="review-footer">
