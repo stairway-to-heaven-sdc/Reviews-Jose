@@ -1,25 +1,9 @@
-/* h1, h2, h3, h4, h5, h6, p, span, li {
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-} */
+
 .yelp-font {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-ul, li {
-  list-style-type: none;
-}
-ul {
-  display: block;
-  padding: 0;
-}
-div {
-  display: block;
 }
 
 h2.b {
@@ -70,6 +54,9 @@ h2.b {
 
 .list{
   margin-bottom: 12px;
+  display: block;
+  padding: 0;
+  list-style-type: none;
 }
 
 .list-bordered>li {
@@ -77,6 +64,7 @@ h2.b {
   padding: 18px 0;
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 17px;
+  list-style-type: none;
 }
 
 .rating-date {
@@ -172,6 +160,9 @@ h2.b {
 
 .voting {
   margin-bottom: 12px;
+  display: block;
+  padding: 0;
+  list-style-type: none;
 }
 
 .voting-intro {
