@@ -22,9 +22,18 @@ class ReviewsService extends Component {
   render () {
     let { reviews } = this.state;
     return(
-      <div className="yelp-font">
-        < Search bizName="Jang Guem Tofu and BBQ" />
-        < Reviews reviews={reviews} bizName="Jang Guem Tofu and BBQ"/>
+      <div id="super-container" class="content-container">
+        <div className="column column-alpha">
+          {/* ^^^Code above should be in Proxy Server */}
+
+          <div className="yelp-font">
+            < Search bizName="Jang Guem Tofu and BBQ" />
+            < Reviews reviews={reviews} bizName="Jang Guem Tofu and BBQ"/>
+          </div>
+
+          {/* ^^^Code below should be in Proxy Server */}
+        </div>
+        <div className="column column-beta"></div>
       </div>
     )
   }
