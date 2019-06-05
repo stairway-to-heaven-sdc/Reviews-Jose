@@ -294,7 +294,7 @@ h2.b {
   margin-bottom: 12px !important;
   border-bottom: 1px solid #ccc;
 }
-.star-choose>div{
+.star-choose > div{
   margin-bottom: 8px;
 }
 .start-review {
@@ -305,4 +305,38 @@ h2.b {
 
 .Section3-compose-review {
   padding-bottom: 80px;
+}
+.trust-banner {
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e6e6e6;
+}
+
+.trust-arrange {
+  margin-left: -12px;
+  margin-right: -12px;
+  border-collapse: separate;
+  border-spacing: 12px 0;
+  display: table;
+  min-width: 100%;
+  table-layout: auto;
+}
+
+.trust-text {
+  margin-left: 6px;
+  margin-right: 6px;
+  border-collapse: collapse;
+  border-spacing: 0 0;
+  vertical-align: middle;
+  width: 100%;
+  box-sizing: border-box;
+  display: table-cell;
+}
+.legal-text {
+  color: #333;
+  font-size: 12px;
+  line-height: 1.5em;
+}
+.trust-highlight {
+  color: #0073bb;
 }
