@@ -112,6 +112,7 @@ h2.b {
   background-size: 132px 560px;
   display: inline-block;
   vertical-align: middle;
+  margin: -1px 6px 0 0;
 }
 .i-stars--10 {
   width: 102px;
@@ -137,6 +138,12 @@ h2.b {
   width: 102px;
   height: 18px;
   background-position: 0 -402px;
+}
+
+.i-stars--large-0 {
+  width: 132px;
+  height: 24px;
+  background-position: 0 0;
 }
 
 .photo-box-img {
@@ -287,9 +294,13 @@ h2.b {
   margin-bottom: 12px !important;
   border-bottom: 1px solid #ccc;
 }
+.star-choose>div{
+  margin-bottom: 8px;
+}
 .start-review {
   color: #0073bb;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .Section3-compose-review {

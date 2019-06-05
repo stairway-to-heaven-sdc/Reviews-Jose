@@ -6,6 +6,7 @@ const Compose = (props) => (
     <div className="review-wrapper">
       <div className="island">
         <div className="star-choose">
+          <div className="i-stars--large-0 i-stars"></div>
         </div>
         <div className="start-review">
           <a>Start your review of {props.bizName}</a>
