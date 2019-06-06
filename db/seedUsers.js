@@ -20,7 +20,7 @@ const seedUsers = () => {
 const createUsers = (data) => {
   let users = [];
   let count = 1;
-  let eliteStatus = [`Elite'19`, '', ''];
+  let eliteStatus = [`Elite '19`, '', ''];
     for (let key of data) {
       let user = {
         uId: count,

@@ -51,6 +51,16 @@ app.get('/users/', (req, res) => {
   .catch((err) => console.log(err));
 });
 
+app.get('/user/:uId', (req, res) => {
+  let { uId } = req.params;
+  console.log(uId)
+  retrieveUsersById([uId])
+  .then((user) => {
+    res.send(user[0]);
+  })
+  .catch((err) => console.log(err));
+});
+
 app.post('/users/newuser', (req, res) => {
   let { uId } = req.body;
   uId = JSON.parse(uId);
