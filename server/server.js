@@ -35,10 +35,10 @@ app.get('/reviews/summation/:bId', (req, res) => {
   let { bId } = req.params;
   retrieveByBiz(bId).then((reviews) =>{
     let reviewCount = reviews.length;
-    let reviewRating = reviews.reduce((acc, val) => {
+    let rating = reviews.reduce((acc, val) => {
       return acc + val.rating;
     }, 0);
-    res.send({ reviewCount, reviewRating });
+    res.send({ reviewCount, rating });
   });
 });
 
