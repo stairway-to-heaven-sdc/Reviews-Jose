@@ -6,9 +6,8 @@ const User = (props) => {
   const [userInfo, setUser] = useState({});
 
   useEffect(() => {
-    let body = { params: { uIds: [props.user]} };
-    axios.get('/users/', body)
-    .then(({data}) => setUser(data[0]));
+    axios.get(`/user/${props.user}`)
+    .then(({data}) => setUser(data));
   },[]);
   let {username, city, state, friends, photo, elite} = userInfo;
 
@@ -32,16 +31,16 @@ const User = (props) => {
     </div>
     <ul className="user-interaction">
       <li className="interaction-point"> <div className="arrange-user">
-        <div className="interaction-icon"> <Icon.share /></div> <div className="interaction-label"> Share Review</div>
+        <div className="interaction-icon"> <Icon.share /></div> <div className="interaction-label interaction-border"> Share Review</div>
       </div></li>
       <li className="interaction-point"> <div className="arrange-user">
-        <div className="interaction-icon"> <Icon.embed /></div> <div className="interaction-label"> Embed Review</div>
+        <div className="interaction-icon"> <Icon.embed /></div> <div className="interaction-label interaction-border"> Embed Review</div>
       </div></li>
       <li className="interaction-point"> <div className="arrange-user">
-        <div className="interaction-icon"> <Icon.compliment /></div> <div className="interaction-label"> Compliment</div>
+        <div className="interaction-icon"> <Icon.compliment /></div> <div className="interaction-label interaction-border"> Compliment</div>
       </div></li>
       <li className="interaction-point"> <div className="arrange-user">
-        <div className="interaction-icon"> <Icon.message /></div> <div className="interaction-label"> Send Message</div>
+        <div className="interaction-icon"> <Icon.message /></div> <div className="interaction-label interaction-border"> Send Message</div>
       </div></li>
       <li className="interaction-point"> <div className="arrange-user">
         <div className="interaction-icon"> <Icon.follow /></div> <div className="interaction-label"> Follow {username}</div>
