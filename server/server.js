@@ -53,7 +53,6 @@ app.get('/users/', (req, res) => {
 
 app.get('/user/:uId', (req, res) => {
   let { uId } = req.params;
-  console.log(uId)
   retrieveUsersById([uId])
   .then((user) => {
     res.send(user[0]);

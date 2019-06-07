@@ -30,6 +30,23 @@ const User = (props) => {
         }
       </div>
     </div>
+    <ul className="user-interaction">
+      <li className="interaction-point"> <div className="arrange-user">
+        <div className="interaction-icon"> <Icon.share /></div> <div className="interaction-label"> Share Review</div>
+      </div></li>
+      <li className="interaction-point"> <div className="arrange-user">
+        <div className="interaction-icon"> <Icon.embed /></div> <div className="interaction-label"> Embed Review</div>
+      </div></li>
+      <li className="interaction-point"> <div className="arrange-user">
+        <div className="interaction-icon"> <Icon.compliment /></div> <div className="interaction-label"> Compliment</div>
+      </div></li>
+      <li className="interaction-point"> <div className="arrange-user">
+        <div className="interaction-icon"> <Icon.message /></div> <div className="interaction-label"> Send Message</div>
+      </div></li>
+      <li className="interaction-point"> <div className="arrange-user">
+        <div className="interaction-icon"> <Icon.follow /></div> <div className="interaction-label"> Follow {username}</div>
+      </div></li>
+    </ul>
   </div>
 )};
 

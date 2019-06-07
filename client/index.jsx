@@ -22,7 +22,7 @@ class ReviewsService extends Component {
   render () {
     let { reviews } = this.state;
     return(
-      <div id="super-container" class="content-container">
+      <div id="super-container" className="content-container">
         <div className="column column-alpha">
           {/* ^^^Code above should be in Proxy Server */}
 
