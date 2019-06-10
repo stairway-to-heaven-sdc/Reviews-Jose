@@ -12,14 +12,16 @@ app.get('/reviews/business/:bId', (req, res) => {
   let { bId } = req.params;
   retrieveByBiz(bId).then((reviews) =>{
     res.send({reviews});
-  });
+  })
+  .catch((err) => console.log(err));
 });
 
 app.get('/reviews/user/:uId', (req, res) => {
   let { uId } = req.params;
   retrieveByUser(uId).then((reviews) =>{
     res.send({reviews});
-  });
+  })
+  .catch((err) => console.log(err));
 });
 
 app.get('/reviews/search/:bId', (req, res) => {
@@ -28,18 +30,20 @@ app.get('/reviews/search/:bId', (req, res) => {
     // Search review text within each review and return
 
     res.send({reviews});
-  });
+  })
+  .catch((err) => console.log(err));
 });
 
 app.get('/reviews/summation/:bId', (req, res) => {
   let { bId } = req.params;
-  retrieveByBiz(bId).then((reviews) =>{
+  retrieveByBiz(bId).then((reviews) => {
     let reviewCount = reviews.length;
     let rating = reviews.reduce((acc, val) => {
       return acc + val.rating;
     }, 0);
     res.send({ reviewCount, rating });
-  });
+  })
+  .catch((err) => console.log(err));
 });
 
 app.get('/users/', (req, res) => {
