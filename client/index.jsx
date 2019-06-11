@@ -14,18 +14,9 @@ const ReviewsService = (props) => {
   },[]);
 
   return(
-    <div id="super-container" className="content-container">
-      <div className="column column-alpha">
-        {/* ^^^Code above should be in Proxy Server */}
-
-        <div className="yelp-font">
-          < Search bizName="Jang Guem Tofu and BBQ" />
-          < Reviews reviews={reviews} bizName="Jang Guem Tofu and BBQ"/>
-        </div>
-
-        {/* ^^^Code below should be in Proxy Server */}
-      </div>
-      <div className="column column-beta"></div>
+    <div className="yelp-font">
+      < Search bizName="Jang Guem Tofu and BBQ" />
+      < Reviews reviews={reviews} bizName="Jang Guem Tofu and BBQ"/>
     </div>
   )
 }
