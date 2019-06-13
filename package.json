@@ -4,8 +4,8 @@
   "description": "Front-end Capstone project to mimic an item page for Yelp. A microservices approach is taken, and in this instance the Reviews and Users services will be implemented.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "seed": "node db/seedReviews.js; node db/seedReviews.js",
+    "test": "jest --coverage",
+    "seed": "node db/seedReviews.js; node db/seedUsers.js",
     "start": "nodemon server/server.js",
     "build": "webpack -d --watch"
   },
@@ -32,6 +32,7 @@
     "enzyme-to-json": "^3.3.5",
     "jest": "^24.8.0",
     "nodemon": "^1.19.0",
+    "react-test-renderer": "^16.8.6",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
   },
@@ -48,17 +49,11 @@
     "react-dom": "^16.8.6"
   },
   "jest": {
+    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"],
     "moduleFileExtensions": [
       "js",
       "jsx"
     ],
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    },
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
