@@ -7,9 +7,17 @@ import Search from './components/Search.jsx';
 
 const ReviewsService = (props) => {
   const [reviews, setReviews] = useState([]);
+  const [biz, setBiz] = useState([]);
 
   useEffect(() => {
-    axios.get(`/reviews/business/${props.bizId}`)
+    let bizId = 1;
+    if (window.location.pathname !== '/') {
+      bizId = window.location.pathname.slice(6);
+    }
+    axios.get(`/biz/${bizId}`)
+    .then(({data}) => setBiz(data));
+
+    axios.get(`/reviews/business/${bizId}`)
     .then(({data}) => setReviews(data.reviews));
   },[]);
 
@@ -19,8 +27,8 @@ const ReviewsService = (props) => {
         {/* ^^^Code above should be in Proxy Server */}
 
         <div className="yelp-font">
-          < Search bizName="Jang Guem Tofu and BBQ" />
-          < Reviews reviews={reviews} bizName="Jang Guem Tofu and BBQ"/>
+          < Search bizName={biz.bizname} />
+          < Reviews reviews={reviews} biz={biz} />
         </div>
 
         {/* ^^^Code below should be in Proxy Server */}
