@@ -1,4 +1,4 @@
-const { saveReview } = require('./db');
+const { saveReview } = require('./dbReviews');
 const faker = require('faker');
 const axios = require('axios');
 
@@ -69,7 +69,7 @@ const seedDb = ( bizCount = 100 ) => {
   })
   .catch((err) => console.log(err))
 };
-
+seedDb();
 
 const getRandom = (start, startInc, endInc) => {
   start += startInc;

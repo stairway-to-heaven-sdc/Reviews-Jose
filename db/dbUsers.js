@@ -7,6 +7,7 @@ const usersSchema = new mongoose.Schema({
   city: String,
   state: String,
   photo: String,
+  elite: String,
   friends: [],
 });
 

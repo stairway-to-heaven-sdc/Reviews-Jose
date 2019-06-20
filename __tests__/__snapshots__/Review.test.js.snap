@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Review component matches snapshot 1`] = `
+<Review
+  review={
+    Object {
+      "bId": 7,
+      "checkin": false,
+      "cool": Array [
+        Object {
+          "uId": 98,
+          "username": "Waylon Reilly",
+        },
+      ],
+      "createdAt": "2013-02-19T13:16:04.526Z",
+      "funny": Array [
+        Object {
+          "uId": 75,
+          "username": "Lavada Hermiston",
+        },
+        Object {
+          "uId": 7,
+          "username": "George Schowalter",
+        },
+      ],
+      "rating": 1,
+      "reviewText": "My taste buds are still tingling from our last visit! The food was flavorful, savory, and succulent. I want to hire their decorator to furnish my apartment. Overall experience: 5 stars.",
+      "uId": 90,
+      "updatedAt": "2013-02-19T13:16:04.526Z",
+      "useful": Array [],
+    }
+  }
+>
+  <div
+    className="review-wrapper yelp-font"
+  >
+    <div
+      className="review-content"
+    >
+      <div
+        className="i-stars i-stars--10"
+      />
+      <span
+        className="rating-date"
+      >
+         
+        2/19/2013
+         
+      </span>
+      <p
+        className="text"
+      >
+        My taste buds are still tingling from our last visit! The food was flavorful, savory, and succulent. I want to hire their decorator to furnish my apartment. Overall experience: 5 stars.
+      </p>
+    </div>
+    <div
+      className="review-footer"
+    >
+      <p
+        className="voting-intro"
+      >
+        Was this review ...?
+      </p>
+      <ul
+        className="voting"
+      >
+        <li
+          className="vote-item"
+        >
+          <span
+            className="icon-user-review"
+            style={
+              Object {
+                "height": "18px",
+                "width": "18px",
+              }
+            }
+          >
+             
+            <useful>
+              <svg
+                fill="#666"
+                height="18"
+                width="18"
+              >
+                <path
+                  d="M9 17c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM9 2C5.14 2 2 5.14 2 9s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm2 8.392V12H7v-1.608a3.982 3.982 0 0 1-2-3.445 4 4 0 0 1 8 0c0 1.477-.81 2.752-2 3.445zM8 5.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm1.003 9.747h-.006A1.997 1.997 0 0 1 7 13h4a1.997 1.997 0 0 1-1.997 1.997z"
+                />
+              </svg>
+            </useful>
+             
+          </span>
+          <span>
+             Useful
+          </span>
+        </li>
+        <li
+          className="vote-item"
+        >
+          <span
+            className="icon-user-review"
+            style={
+              Object {
+                "height": "18px",
+                "width": "18px",
+              }
+            }
+          >
+             
+            <funny>
+              <svg
+                fill="#666"
+                height="18"
+                width="18"
+              >
+                <path
+                  d="M9 17c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM9 2C5.14 2 2 5.14 2 9s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 12a4.87 4.87 0 0 1-4.787-4h9.574A4.87 4.87 0 0 1 9 14zm2.5-5.625a1.376 1.376 0 1 1 0-2.75 1.376 1.376 0 0 1 0 2.75zm-5 0a1.376 1.376 0 1 1 0-2.75 1.376 1.376 0 0 1 0 2.75z"
+                />
+              </svg>
+            </funny>
+             
+          </span>
+          <span>
+             Funny
+          </span>
+        </li>
+        <li
+          className="vote-item"
+        >
+          <span
+            className="icon-user-review"
+            style={
+              Object {
+                "height": "18px",
+                "width": "18px",
+              }
+            }
+          >
+             
+            <cool>
+              <svg
+                fill="#666"
+                height="18"
+                width="18"
+              >
+                <path
+                  d="M9 17c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM9 2C5.14 2 2 5.14 2 9s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm2 8.392V12H7v-1.608a3.982 3.982 0 0 1-2-3.445 4 4 0 0 1 8 0c0 1.477-.81 2.752-2 3.445zM8 5.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm1.003 9.747h-.006A1.997 1.997 0 0 1 7 13h4a1.997 1.997 0 0 1-1.997 1.997z"
+                />
+              </svg>
+            </cool>
+             
+          </span>
+          <span>
+             Cool
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</Review>
+`;
