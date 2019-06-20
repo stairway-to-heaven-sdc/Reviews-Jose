@@ -69,7 +69,7 @@ const seedDb = ( bizCount = 100 ) => {
   })
   .catch((err) => console.log(err))
 };
-seedDb();
+
 
 const getRandom = (start, startInc, endInc) => {
   start += startInc;
@@ -87,3 +87,5 @@ const generateUsers = () => {
   }
   return users;
 };
+
+module.exports.seedDb = seedDb;

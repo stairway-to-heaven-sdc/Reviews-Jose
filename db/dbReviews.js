@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
+// mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost/fec', {useNewUrlParser: true });
 
 const reviewSchema = new mongoose.Schema({
@@ -23,7 +23,7 @@ const saveReview = (data) => {
   });
 };
 
-const retrieveAllReviews = (callback) => {
+const retrieveAllReviews = () => {
   return new Promise ((resolve, reject) => {
     Review.find({})
     .then((data) => resolve(data))
@@ -31,5 +31,32 @@ const retrieveAllReviews = (callback) => {
   });
 };
 
+const retrieveByBiz = (bId) => {
+  return new Promise ((resolve, reject) => {
+    Review.find({ bId })
+    .then((data) => resolve(data))
+    .catch((err) => reject(err))
+  });
+};
+
+const retrieveByUser = (uId) => {
+  return new Promise ((resolve, reject) => {
+    Review.find({ uId })
+    .then((data) => resolve(data))
+    .catch((err) => reject(err))
+  });
+};
+
+const retrieve1Review = (rId) => {
+  return new Promise ((resolve, reject) => {
+    Review.find({ rId })
+    .then((data) => resolve(data))
+    .catch((err) => reject(err))
+  });
+};
+
 module.exports.retrieveAllReviews = retrieveAllReviews;
 module.exports.saveReview = saveReview;
+module.exports.retrieveByBiz = retrieveByBiz;
+module.exports.retrieveByUser = retrieveByUser;
+module.exports.retrieve1Review = retrieve1Review;
