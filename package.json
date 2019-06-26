@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "seed": "node db/seedReviews.js; node db/seedUsers.js",
+    "seed": "node db/seedReviews.js",
+    "seed2": "node db/seedUsers.js",
     "start": "nodemon server/server.js",
     "build": "webpack -d --watch"
   },

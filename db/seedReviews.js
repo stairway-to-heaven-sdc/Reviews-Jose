@@ -1,6 +1,7 @@
 const { saveReview } = require('./dbReviews');
 const faker = require('faker');
 const axios = require('axios');
+let _ = require('lodash');
 
 const seedDb = ( bizCount = 100 ) => {
   let hipsterReviews = [];
@@ -38,20 +39,21 @@ const seedDb = ( bizCount = 100 ) => {
         }
 
         const fullReviews = [ ...hipsterReviews, ...meatReviews, ...starReviews];
-        const len = fullReviews.length;
         const reviewBatch = [];
-        const getReview = () => fullReviews[getRandom(0,0,len)];
+        const getReview = () => _.sample(fullReviews);
+        let ratingOptions = [1,2,3,4,5];
+        let checkinOptions = [true, false];
         for (let i = 1; i <= bizCount; i++) {
           // For loop to generate variable length of reviews
-          let randReviews = getRandom(0, 0, 20);
+          let randReviews = _.random(20);
           for (let j = 0; j < randReviews; j++) {
-            let date = faker.date.between('2013-01-01', '2019-5-30');
+            let date = faker.date.between('2013-01-01', '2019-6-28');
             let review = {
-              uId: getRandom(1, 0, 99),
+              uId: _.random(1, 100),
               bId: i,
-              rating: getRandom(0, 1, 5),
+              rating: _.sample(ratingOptions),
               reviewText: getReview(),
-              checkin: getRandom(0, 0, 2) ? false : true,
+              checkin: _.sample(checkinOptions),
               useful: generateUsers(),
               funny: generateUsers(),
               cool: generateUsers(),
@@ -82,9 +84,9 @@ const cleanData = (data) => data.split(`-Star Review</h2>`)[1].split(`</div>`)[0
 
 const generateUsers = () => {
   let users = [];
-  let num = getRandom(0,0,3);
+  let num = _.random(0,3);
   for (let i = 0; i < num; i++){
-    users.push( { username: faker.name.findName(), uId: getRandom(1,0,99) } );
+    users.push( { username: faker.name.findName(), uId: _.random(1,100) } );
   }
   return users;
 };
