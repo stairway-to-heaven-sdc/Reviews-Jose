@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/fec', {useNewUrlParser: true });
+require('dotenv').config();
+const url = 'mongodb://localhost/fec';
+const mongoURI = process.env.MONGOURI //|| url;
+mongoose.connect(mongoURI, {useNewUrlParser: true });
 
 const usersSchema = new mongoose.Schema({
   uId: Number,
