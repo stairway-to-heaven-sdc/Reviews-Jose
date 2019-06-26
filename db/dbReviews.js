@@ -3,7 +3,7 @@ require('dotenv').config();
 // mongoose.Promise = require('bluebird');
 // mongoose.connect('mongodb://localhost/fec', {useNewUrlParser: true });
 const url = 'mongodb://localhost/fec'; //'mongodb://18.188.151.192/fec'
-const mongoURI = process.env.MONGOURI || url;
+const mongoURI = process.env.MONGOURI //|| url;
 // let successCB = function(error){
 //   if(error) console.log(error);
 //   console.log("connection successful");

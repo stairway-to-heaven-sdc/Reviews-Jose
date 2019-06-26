@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 const url = 'mongodb://localhost/fec';
-const mongoURI = process.env.mongoURI || url;
+const mongoURI = process.env.MONGOURI //|| url;
 mongoose.connect(mongoURI, {useNewUrlParser: true });
 
 const usersSchema = new mongoose.Schema({

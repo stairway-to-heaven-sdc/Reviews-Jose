@@ -63,7 +63,8 @@ const seedDb = ( bizCount = 100 ) => {
           }
         }
         saveReview(reviewBatch)
-        .then((stat) => console.log(`**Success**\n\n`, stat.slice(0,6), `\n\nReview Total: ${stat.length}\nFirst 7 Reviews Displayed`));
+        .then((stat) => console.log(`**Success**\n\n`, stat.slice(0,6), `\n\nReview Total: ${stat.length}\nFirst 7 Reviews Displayed`))
+        .catch((err)=> console.log(err))
       }))
     })
   })
