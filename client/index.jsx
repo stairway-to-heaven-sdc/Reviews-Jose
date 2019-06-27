@@ -38,4 +38,4 @@ const ReviewsService = (props) => {
   )
 }
 
-ReactDOM.render(<ReviewsService bizId={7} /> ,document.getElementById('ReviewsService'));
+ReactDOM.render(<ReviewsService /> ,document.getElementById('ReviewsService'));
