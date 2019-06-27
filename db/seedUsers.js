@@ -28,6 +28,9 @@ const createUsers = (data) => {
         state: faker.address.stateAbbr(),
         photo: key.photo,
         elite: _.sample(eliteStatus),
+        friendCount: _.random(10, 120),
+        reviewCount: _.random(10, 400),
+        photoCount: _.random(10, 400),
       };
       users.push(user);
       count++;
