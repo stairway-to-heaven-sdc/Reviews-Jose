@@ -10,7 +10,7 @@ const seedUsers = () => {
   .then(({data}) => {
     let userList = createUsers(data);
     saveUsers(userList)
-    .then((users) => console.log(users))
+    .then((users) => console.log(`Users saved: ${users.length}`))
     .catch((err) => console.log(err));
   })
   .catch((err) => console.log(err));
