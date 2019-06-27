@@ -11,7 +11,9 @@ const usersSchema = new mongoose.Schema({
   state: String,
   photo: String,
   elite: String,
-  friends: [],
+  friendCount: Number,
+  reviewCount: Number,
+  photoCount: Number,
 });
 
 const User = mongoose.model('User', usersSchema);
