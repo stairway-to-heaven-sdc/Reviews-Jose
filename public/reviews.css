@@ -190,6 +190,9 @@ h2.b {
   color: #333;
 }
 
+.bold {
+  font-weight: bold;
+}
 .review-footer {
   white-space: nowrap;
   margin-bottom: 6px;

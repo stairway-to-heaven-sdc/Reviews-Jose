@@ -21,9 +21,9 @@ const User = (props) => {
       <div className="user-story">
         <div className="username"> {username} </div>
         <div className="location"> {`${city}, ${state}`} </div>
-        <div><span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.friends /> </span> <b style="font-weight: bold">{friendCount}</b> friends </div>
-        <div><span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.reviewCount /> </span> <b style="font-weight: bold">{reviewCount}</b> reviews </div>
-        <div><span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.photos /> </span> <b style="font-weight: bold">{photoCount}</b> photos </div>
+        <div><span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.friends /> </span> <b className="bold">{friendCount}</b> friends </div>
+        <div><span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.reviewCount /> </span> <b className="bold">{reviewCount}</b> reviews </div>
+        <div><span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.photos /> </span> <b className="bold">{photoCount}</b> photos </div>
         { elite &&
         <div className="elite"> <span>{elite}</span> </div>
         }

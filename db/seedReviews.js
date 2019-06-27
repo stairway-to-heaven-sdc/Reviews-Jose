@@ -15,7 +15,7 @@ const seedDb = ( bizCount = 100 ) => {
     let start = 0;
     let end;
     while ( start < hipsterParagraph.length) {
-      end = getRandom(start, 5, 8);
+      end = start + _.random(15, 35);
       let curr = hipsterParagraph.slice(start, end).join(' ') + '.';
       curr = curr.charAt(0).toUpperCase() + curr.slice(1);
       hipsterReviews.push(curr);
@@ -65,7 +65,7 @@ const seedDb = ( bizCount = 100 ) => {
           }
         }
         saveReview(reviewBatch)
-        .then((stat) => console.log(`**Success**\n\n`, stat.slice(0,6), `\n\nReview Total: ${stat.length}\nFirst 7 Reviews Displayed`))
+        .then((stat) => console.log(`**Seed Reviews Success**\nReview Total: ${stat.length}\n`))
         .catch((err)=> console.log(err))
       }))
     })
@@ -73,12 +73,6 @@ const seedDb = ( bizCount = 100 ) => {
   .catch((err) => console.log(err))
 };
 seedDb();
-
-const getRandom = (start, startInc, endInc) => {
-  start += startInc;
-  let end = start + endInc;
-  return Math.floor(Math.random() * (end - start + 1)) + start;
-};
 
 const cleanData = (data) => data.split(`-Star Review</h2>`)[1].split(`</div>`)[0].split(`<div>`)[1].trim();
 
