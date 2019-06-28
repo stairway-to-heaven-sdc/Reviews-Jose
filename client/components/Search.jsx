@@ -26,17 +26,30 @@ const Search = (props) => {
       </div>
 
       <div className="Section3-Search">
-        <div className="search-bar">
-          <form>
-            {/* <label> */}
-              <input value={searchTerm} onChange={e => setSearch(e.target.value)}
-                placeholder='Search within the reviews' type='text'>
-              </input>
-            {/* </label> */}
-            <button type='submit' value='submit'></button>
-          </form>
+        <div className= "arrange-user">
+
+          <div className="arrange_unit arrange_unit--fill">
+            <div className="search-bar">
+              <form className="arrange-user">
+                <div className="arrange_unit arrange_unit--fill">
+                  <input className="y-search" value={searchTerm} onChange={e => setSearch(e.target.value)}
+                    placeholder='Search within the reviews' type='text'>
+                  </input>
+                </div>
+                <div className="arrange_unit">
+                  <button className="y-button" type='submit' value='submit'>
+                    <span className="icon-user-review" style={{width: '18px', height: '18px'}}> <Icon.searchglass /> </span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div className="arrange_unit u-nowrap">
+            <div className="yelp-sort">
+              Sort by Yelp Sort
+            </div>
+          </div>
         </div>
-        <div className="yelp-sort"></div>
       </div>
     </div>
   )
