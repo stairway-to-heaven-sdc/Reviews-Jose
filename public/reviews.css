@@ -31,7 +31,10 @@
   display: table;
   clear: both;
 }
-
+.compose-block {
+  margin: 0 -15px;
+  padding: 18px 0;
+}
 .yelp-font {
   font-size: 100%;
   font: inherit;
@@ -39,7 +42,7 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-h2.b {
+h2 b {
   font-weight: normal;
   color: #333;
 }
@@ -308,6 +311,9 @@ h2.b {
 
 .Section4-compose-review {
   padding-bottom: 80px;
+
+  border-bottom: 1px solid #e6e6e6;
+
 }
 .trust-banner {
   padding: 12px;
@@ -344,7 +350,12 @@ h2.b {
   color: #0073bb;
 }
 
+.Section2-Recommended {
+  margin-top: 15px !important;
+}
+
 .Section3-Search {
+  margin-top: 6px !important;
   margin-bottom: 6px !important;
 }
 .search-bar {

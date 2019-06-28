@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Reviews from './components/Reviews.jsx';
 import Search from './components/Search.jsx';
+import Compose from './components/Compose.jsx';
 
 
 const ReviewsService = (props) => {
@@ -28,6 +29,7 @@ const ReviewsService = (props) => {
 
         <div className="yelp-font">
           < Search bizName={biz.bizname} />
+          < Compose bizName={biz.bizname} />
           < Reviews reviews={reviews} biz={biz} />
         </div>
 

@@ -9,7 +9,7 @@ const Search = (props) => {
 
       <div className="Section1-Questions">
         <h2 className="rheader">Ask the Community</h2>
-        <div className="text">Yelp users haven't asked any questions yet about <b>{props.bizName}.</b></div>
+        <div className="text">Yelp users haven't asked any questions yet about <b className="bold">{props.bizName}.</b></div>
         <div className="question">Ask a Question</div>
       </div>
 
@@ -19,7 +19,7 @@ const Search = (props) => {
           <div className="trust-arrange">
             <div className="trust-logo"> <span className="icon"><Icon.yelpSvgLogo /></span> </div>
             <div className="trust-text">
-              <span className="legal-text"><b>Your trust is our top concern,</b> so business can't pay to alter or remove their reviews. <a className="trust-highlight">Learn more.</a></span>
+              <span className="legal-text"><b className="bold">Your trust is our top concern,</b> so business can't pay to alter or remove their reviews. <a className="trust-highlight">Learn more.</a></span>
             </div>
           </div>
         </div>
@@ -46,7 +46,6 @@ const Search = (props) => {
           </div>
           <div className="arrange_unit u-nowrap">
             <div className="yelp-sort">
-              Sort by Yelp Sort
             </div>
           </div>
         </div>
