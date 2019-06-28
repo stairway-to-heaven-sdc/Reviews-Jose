@@ -31,7 +31,10 @@
   display: table;
   clear: both;
 }
-
+.compose-block {
+  margin: 0 -15px;
+  padding: 18px 0;
+}
 .yelp-font {
   font-size: 100%;
   font: inherit;
@@ -39,7 +42,7 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-h2.b {
+h2 b {
   font-weight: normal;
   color: #333;
 }
@@ -308,6 +311,9 @@ h2.b {
 
 .Section4-compose-review {
   padding-bottom: 80px;
+
+  border-bottom: 1px solid #e6e6e6;
+
 }
 .trust-banner {
   padding: 12px;
@@ -344,11 +350,71 @@ h2.b {
   color: #0073bb;
 }
 
+.Section2-Recommended {
+  margin-top: 15px !important;
+}
+
 .Section3-Search {
+  margin-top: 6px !important;
   margin-bottom: 6px !important;
 }
 .search-bar {
   margin-right: 30px !important;
+}
+.arrange_unit {
+  box-sizing: border-box;
+  display: table-cell;
+  vertical-align: top;
+}
+.arrange_unit--fill {
+  width: 100%;
+  margin-right: 30px!important;
+}
+.y-button {
+  position: relative;
+  left: -1px;
+  width: calc(100% + 1px);
+  border-radius: 0 3px 3px 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 5px 8px;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: #fff;
+  background: #d32323;
+  border: 1px solid #d32323;
+  background-image: none;
+  background-repeat: no-repeat;
+  transition: all 0.6s;
+  transition-property: background-color, background-position, background-size, border-color;
+  background-position: 50% 50%;
+  background-size: 15000px 15000px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  overflow: visible;
+}
+.y-search {
+  margin: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 9px;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 1.29em;
+}
+.u-nowrap {
+  white-space: nowrap !important;
+}
+.yelp-sort {
+  margin-left: -12px;
 }
 
 .user-with-review:hover .user-interaction {
