@@ -74,7 +74,7 @@ const seedDb = ( bizCount = 100 ) => {
 };
 seedDb();
 
-const cleanData = (data) => data.split(`-Star Review</h2>`)[1].split(`</div>`)[0].split(`<div>`)[1].trim();
+const cleanData = (data) => data.split(`-Star Review</h2>`)[1].split(`</div>`)[0].split(`<div>`)[1].trim().replace(/&#39;/gi, "'");
 
 const generateUsers = () => {
   let users = [];
