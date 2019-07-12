@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const mongoURI = process.env.MONGOURI || 'mongodb://localhost/fec'
+const mongoURI = process.env.MONGOURI || 'mongodb://localhost/SDC'
 mongoose.connect(mongoURI, {useNewUrlParser: true }, );
 
 const reviewSchema = new mongoose.Schema({
@@ -61,3 +61,4 @@ module.exports.saveReview = saveReview;
 module.exports.retrieveByBiz = retrieveByBiz;
 module.exports.retrieveByUser = retrieveByUser;
 module.exports.retrieve1Review = retrieve1Review;
+module.exports.Review = Review;
