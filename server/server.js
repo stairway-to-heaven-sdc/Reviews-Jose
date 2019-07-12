@@ -48,8 +48,8 @@ app.post('/reviews/new/:bId',
     });
   });
 
-// PUT update one review record
-app.put('/review/modifyReview/', 
+// PATCH update one review record
+app.patch('/review/modifyReview/', 
   (req,res) => {
   // review _id
   const rvwId = req.query._id;
@@ -77,7 +77,6 @@ app.put('/review/modifyReview/',
         })
       }
     })
-
     .catch(err => res.send(err));
 }); 
 
