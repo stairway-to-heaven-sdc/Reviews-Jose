@@ -12,14 +12,18 @@ const ReviewsService = (props) => {
 
   useEffect(() => {
     let bizId = 1;
+    console.log(window.location.pathname, `path`)
     if (window.location.pathname !== '/') {
-      bizId = window.location.pathname.slice(6);
+      bizId = window.location.pathname.split('/')[2];
+      axios.get(`/reviews/business/${bizId}`)
+      .then(({data}) => setReviews(data.reviews));
+    } else {
+      axios.get(`/reviews/business/${bizId}`)
+      .then(({data}) => setReviews(data.reviews));
     }
-    axios.get(`/biz/${bizId}`)
-    .then(({data}) => setBiz(data));
+    // axios.get(`/biz/${bizId}`)
+    // .then(({data}) => setBiz(data));
 
-    axios.get(`/reviews/business/${bizId}`)
-    .then(({data}) => setReviews(data.reviews));
   },[]);
 
   return(
