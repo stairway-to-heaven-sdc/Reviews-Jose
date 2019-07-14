@@ -56,9 +56,43 @@ const retrieve1Review = (rId) => {
   });
 };
 
-module.exports.retrieveAllReviews = retrieveAllReviews;
-module.exports.saveReview = saveReview;
-module.exports.retrieveByBiz = retrieveByBiz;
-module.exports.retrieveByUser = retrieveByUser;
-module.exports.retrieve1Review = retrieve1Review;
-module.exports.Review = Review;
+const updateReview = async (rvwId, body) => {
+  const answer = await Review.findById(rvwId)
+  .then(review => {
+    // get current values
+    const currReviewText = review.reviewText;
+    const currRating = review.rating;
+    // compare current values with values from client, 
+    // if the values are the same, respond with the review
+    // determine if rating and reviewText are the same as current review state
+    if (currRating === body.rating && currReviewText === body.reviewText) {
+      return review;
+    } else {
+    // else, update the values with new values from client
+      review.reviewText = body.reviewText;
+      review.rating = body.rating;
+      review.save((err, review) => {
+        if (err) {
+          return err;
+        }
+        return review;
+      })
+    }
+  });
+  return answer;
+};
+// module.exports.retrieveAllReviews = retrieveAllReviews;
+// module.exports.saveReview = saveReview;
+// module.exports.retrieveByBiz = retrieveByBiz;
+// module.exports.retrieveByUser = retrieveByUser;
+// module.exports.retrieve1Review = retrieve1Review;
+// module.exports.Review = Review;
+
+module.exports = {
+  retrieveAllReviews,
+  saveReview,
+  retrieveByBiz,
+  retrieveByUser,
+  Review,
+  updateReview
+}

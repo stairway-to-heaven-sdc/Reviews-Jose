@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3002;
-const { retrieveByBiz, retrieveByUser, retrieve1Review, saveReview, Review} = require('../db/dbReviews');
+const { retrieveByBiz, retrieveByUser, retrieve1Review, saveReview, Review, updateReview} = require('../db/mongodbReviews');
 // const { saveUsers, retrieveUsersById } = require('../db/dbUsers');
 const morgan = require('morgan');
 
@@ -23,9 +23,7 @@ app.use('/reviews/:bId', express.static('public'));
  */
 // GET all reviews
 app.get('/reviews/business/:bId', (req, res) => {
-
   let { bId } = req.params;
-  console.log(bId, `this is the business ID`)
   retrieveByBiz(bId).then((reviews) =>{
     res.send({reviews});
   })
@@ -33,52 +31,28 @@ app.get('/reviews/business/:bId', (req, res) => {
 });
 
 // POST new review 
-app.post('/reviews/new/:bId', 
+app.post('/reviews/newReview/:bId', 
   (req, res) => {
     const review = req.body;
-    review.bId = Number(req.params.bId);
-    // add funny, cool, useful properties
-    review.funny = [];
-    review.cool = [];
-    review.useful = [];
     // save review by Business ID (bId)
     saveReview(review)
     .then((result) => {
       res.send(result);
-    });
+    })
+    .catch(err => console.log(err))
   });
 
-// PATCH update one review record
-app.patch('/review/modifyReview/', 
-  (req,res) => {
-  // review _id
+
+app.patch('/review/new', async(req, res, next) => {
   const rvwId = req.query._id;
-  // body contains the revie text and rating
-  const body = req.body;
-  // determine if the review has been updated with the body
-  Review.findById(rvwId)
-    .then(review => {
-      // get current values
-      const currReviewText = review.reviewText;
-      const currRating = review.rating;
-      // compare current values with values from client, 
-      // if the values are the same, respond with the review
-      if (currRating === body.rating && currReviewText === body.reviewText) {
-        res.send(review);
-      } else {
-      // else, update the values with new values from client
-        review.reviewText = body.reviewText;
-        review.rating = body.rating;
-        review.save((err, review) => {
-          if (err) {
-            res.send(err);
-          }
-          res.send(review);
-        })
-      }
-    })
-    .catch(err => res.send(err));
-}); 
+  try {
+    const response = await updateReview(rvwId, req.body);
+    res.send(response);
+  } catch(err) {
+    next(err);
+  }
+});
+ 
 
 // DELETE one review record
 app.delete('/review/remove', 
