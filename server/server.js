@@ -22,47 +22,53 @@ app.use('/reviews/:bId', express.static('public'));
  * 
  */
 // GET all reviews
-app.get('/reviews/business/:bId', (req, res) => {
+app.get('/reviews/business/:bId', async (req, res, next) => {
   let { bId } = req.params;
-  retrieveByBiz(bId).then((reviews) =>{
-    res.send({reviews});
-  })
-  .catch((err) => console.log(err));
+  try {
+    const reviews = await retrieveByBiz(bId)
+    // res.send(reviews);
+    res.status(200).send(reviews);
+  } catch {
+    res.send(404)
+  }
 });
 
 // POST new review 
-app.post('/reviews/newReview/:bId', 
-  (req, res) => {
+app.post('/reviews/newReview/:bId', async (req, res, next) => {
     const review = req.body;
     // save review by Business ID (bId)
-    saveReview(review)
-    .then((result) => {
-      res.send(result);
-    })
-    .catch(err => console.log(err))
-  });
+    try {
+      const newReview = await saveReview(review)
+      // 201 - The request has been fulfilled, resulting in the creation of a new resource
+      res.status(201).send(newReview);
+    } catch(err) {
+      next(err);
+    }
+});
 
-
-app.patch('/review/new', async(req, res, next) => {
+// PATCH update review
+app.patch('/review/modify', async (req, res, next) => {
   const rvwId = req.query._id;
   try {
     const response = await updateReview(rvwId, req.body);
-    res.send(response);
+    res.status(200).send(response);
   } catch(err) {
-    next(err);
+    res.send(404)
   }
 });
  
 
 // DELETE one review record
-app.delete('/review/remove', 
-  (req, res) => {
+app.delete('/reviews/remove', async (req, res, next) => {
     const rvwId = req.query._id;
-    Review.findByIdAndDelete(rvwId)
-      // returns the review that was deleted
-      .then(response => res.send(response))
-      // returns error
-      .catch(err => res.send(err));
+    try {
+      const reviewDeleted = await Review.findByIdAndDelete(rvwId);
+      // 204 -The server successfully processed the request and is not returning any content
+      res.sendStatus(204);
+      // res.send(reviewDeleted);
+    } catch(err) {
+      res.send(404);
+    }
 });
 
 /**

@@ -1,11 +1,13 @@
 # Review/SDC
 
 
-## CRUD API
+# CRUD APIs
 
-# GET
-Use */reviews/business/:bId* to get reviews based on business Id. Using this endpoint will return an object that contains an array of reviews.
-
+# GET Reviews
+ ## */reviews/business/:bId* 
+Get reviews based on business Id. 
+ ## 202 response:
+```sh
 {
     "reviews": [
         {
@@ -38,22 +40,23 @@ Use */reviews/business/:bId* to get reviews based on business Id. Using this end
         }
     ]
 }
+```
 
-
-# POST API
+# POST - Create new review
 /reviews/newReview/:bId
 Using this enpoint will create a review for a given business, the business Id must be passed in along with the new review data.
 
 The business Id must be passed in the params of the url, and the body must contain the review information. Checkin should be set default unless the user is checkin.
-
+```sh
 {
 	"checkin": false,
 	"rating": 4,
 	"reviewText": "Review was created with PostMan in Product 3",
 	"uId": 45
 }
-
-A successful request will return an array with the review's information as below:
+```
+200 Succesful Response:
+```sh
 [
     {
         "useful": [],
@@ -70,7 +73,49 @@ A successful request will return an array with the review's information as below
         "updatedAt": "2019-07-12T21:05:12.457Z"
     }
 ]
+```
 
-# PATCH API
-/review/modifyReview/
-In order to update the 
+# PATCH - Update a Review
+## /reviews/modify
+URL should contain the review id: ```sh review/modify/?_id=5d22234c67acc9052cfd5712```,and the body should contain the propertie(s) to update.
+
+200 - Succesful Response:
+```sh
+{
+    "useful": [
+        {
+            "username": "Malvina Mraz",
+            "uId": 49
+        },
+        {
+            "username": "Graham Bernhard",
+            "uId": 23
+        }
+    ],
+    "funny": [
+        {
+            "username": "Shanny Cruickshank",
+            "uId": 76
+        }
+    ],
+    "cool": [
+        null
+    ],
+    "_id": "5d22234c67acc9052cfd5712",
+    "uId": 49,
+    "bId": 1,
+    "rating": 3,
+    "reviewText": "This was updated with async/await testing again, and again @15:26pm",
+    "checkin": false,
+    "createdAt": "2017-03-07T07:23:12.580Z",
+    "updatedAt": "2019-07-14T23:27:48.091Z",
+    "__v": 1
+}
+```
+
+# DELETE - delete review
+URL should contain the review id: ``` sh reviews/remove?_id=(id)```
+
+204 - Successful Response.
+404 - Not Found
+

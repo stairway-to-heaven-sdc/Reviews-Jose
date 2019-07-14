@@ -69,8 +69,14 @@ const updateReview = async (rvwId, body) => {
       return review;
     } else {
     // else, update the values with new values from client
-      review.reviewText = body.reviewText;
-      review.rating = body.rating;
+    // remove the id from body if present
+      if (body._id) {
+        delete body._id;
+      }
+      // update the properties
+      for (let upd in body) {
+        review[upd] = body[upd];
+      }
       review.save((err, review) => {
         if (err) {
           return err;
@@ -81,12 +87,6 @@ const updateReview = async (rvwId, body) => {
   });
   return answer;
 };
-// module.exports.retrieveAllReviews = retrieveAllReviews;
-// module.exports.saveReview = saveReview;
-// module.exports.retrieveByBiz = retrieveByBiz;
-// module.exports.retrieveByUser = retrieveByUser;
-// module.exports.retrieve1Review = retrieve1Review;
-// module.exports.Review = Review;
 
 module.exports = {
   retrieveAllReviews,
