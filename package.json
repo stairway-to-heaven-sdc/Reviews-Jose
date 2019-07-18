@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "seed": "node db/seedReviews.js",
+    "seed": "node db/mongodbReviews.js",
     "seed2": "node db/seedUsers.js",
     "start": "nodemon server/server.js",
     "build:dev": "webpack --config webpack.dev.js --watch",
@@ -42,6 +42,7 @@
   "dependencies": {
     "@elastic/elasticsearch": "^7.0.0",
     "axios": "^0.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "faker": "^4.1.0",

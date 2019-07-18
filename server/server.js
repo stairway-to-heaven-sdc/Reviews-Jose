@@ -5,10 +5,11 @@ const port = process.env.PORT || 3002;
 const { retrieveByBiz, retrieveByUser, retrieve1Review, saveReview, Review, updateReview} = require('../db/mongodbReviews');
 // const { saveUsers, retrieveUsersById } = require('../db/dbUsers');
 const morgan = require('morgan');
-
+const cors = require('cors');
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
+app.use(cors());
 // parse application/json
 app.use(bodyParser.json());
 app.use(express.static('public'));
