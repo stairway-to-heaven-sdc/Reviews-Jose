@@ -2,13 +2,20 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3002;
-const { retrieveByBiz, retrieveByUser, retrieve1Review, saveReview, Review, updateReview} = require('../db/mongodbReviews');
+// const { retrieveByBiz, retrieveByUser, retrieve1Review, saveReview, Review, updateReview} = require('../db/mongodbReviews');
 // const { saveUsers, retrieveUsersById } = require('../db/dbUsers');
-const morgan = require('morgan');
+const { 
+  retrieveByBiz,
+  saveReview,
+  updateReview,
+  removeReview } = require('../db/MySQL/index.js');
 
+const morgan = require('morgan');
+const cors = require('cors');
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
+app.use(cors());
 // parse application/json
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -20,7 +27,7 @@ app.use('/reviews/:bId', express.static('public'));
 /**
  * CRUD APIs
  * 
- */
+ */  
 // GET all reviews
 app.get('/reviews/business/:bId', async (req, res, next) => {
   let { bId } = req.params;
@@ -37,8 +44,10 @@ app.get('/reviews/business/:bId', async (req, res, next) => {
 app.post('/reviews/newReview/:bId', async (req, res, next) => {
     const review = req.body;
     // save review by Business ID (bId)
+    const bId = req.params.bId;
     try {
-      const newReview = await saveReview(review)
+      const newReview = await saveReview(review, bId)
+      console.log(newReview,`after insert to db`)
       // 201 - The request has been fulfilled, resulting in the creation of a new resource
       res.status(201).send(newReview);
     } catch(err) {
@@ -49,8 +58,11 @@ app.post('/reviews/newReview/:bId', async (req, res, next) => {
 // PATCH update review
 app.patch('/review/modify', async (req, res, next) => {
   const rvwId = req.query._id;
+  const bId = req.query.bId;
+  console.log(bId, `business Id`)
+  console.log(rvwId, `review ID`)
   try {
-    const response = await updateReview(rvwId, req.body);
+    const response = await updateReview(bId, rvwId, req.body);
     res.status(200).send(response);
   } catch(err) {
     res.send(404)
@@ -61,8 +73,10 @@ app.patch('/review/modify', async (req, res, next) => {
 // DELETE one review record
 app.delete('/reviews/remove', async (req, res, next) => {
     const rvwId = req.query._id;
+    const bId = req.query.bId;
+
     try {
-      const reviewDeleted = await Review.findByIdAndDelete(rvwId);
+      await removeReview(bId, rvwId);
       // 204 -The server successfully processed the request and is not returning any content
       res.sendStatus(204);
       // res.send(reviewDeleted);
