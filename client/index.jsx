@@ -16,10 +16,16 @@ const ReviewsService = (props) => {
     if (window.location.pathname !== '/') {
       bizId = window.location.pathname.split('/')[2];
       axios.get(`/reviews/business/${bizId}`)
-      .then(({data}) => setReviews(data.reviews));
+      .then(({data}) => {
+        console.log(data, `from server 20`)
+        setReviews(data)
+      });
     } else {
       axios.get(`/reviews/business/${bizId}`)
-      .then(({data}) => setReviews(data.reviews));
+      .then(({data}) => {
+        console.log(data, `from server 26`)
+        setReviews(data)
+      });
     }
     // axios.get(`/biz/${bizId}`)
     // .then(({data}) => setBiz(data));
@@ -32,9 +38,9 @@ const ReviewsService = (props) => {
         {/* ^^^Code above should be in Proxy Server */}
 
         <div className="yelp-font">
-          < Search bizName={biz.bizname} />
-          < Compose bizName={biz.bizname} />
-          < Reviews reviews={reviews} biz={biz} />
+          <Search bizName={biz.bizname} />
+          <Compose bizName={biz.bizname} />
+          <Reviews reviews={reviews} biz={biz} />
         </div>
 
         {/* ^^^Code below should be in Proxy Server */}
