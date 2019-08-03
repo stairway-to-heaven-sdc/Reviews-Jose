@@ -7,6 +7,7 @@
     "test": "jest --coverage",
     "seed": "node db/mongodbReviews.js",
     "seed2": "mongo random --eval \"var arg1=50000000;arg2=1\" create_random.js",
+    "seedCassandra" : "node db/Cassandra/seedReviews.js",
     "start": "nodemon server/server.js",
     "build:dev": "webpack --config webpack.dev.js --watch",
     "build": "webpack --config webpack.prod.js --watch"
