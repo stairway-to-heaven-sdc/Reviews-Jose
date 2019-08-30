@@ -45,16 +45,5 @@ CREATE TABLE reviews (
     updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(_id),
     INDEX par_ind (business_id)
-    -- FOREIGN KEY (business_id)
-    --     REFERENCES business (id),
-
-    -- FOREIGN KEY (usefulId)
-    --     REFERENCES useful (id),
-
-    -- FOREIGN KEY (funnyId)
-    --     REFERENCES funny (id),
-
-    -- FOREIGN KEY (coolId)
-    --     REFERENCES cool (id)
     
 );

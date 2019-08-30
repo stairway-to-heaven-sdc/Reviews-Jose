@@ -1,9 +1,9 @@
+require('newrelic');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3002;
-// const { retrieveByBiz, retrieveByUser, retrieve1Review, saveReview, Review, updateReview} = require('../db/mongodbReviews');
-// const { saveUsers, retrieveUsersById } = require('../db/dbUsers');
+
 const { 
   retrieveByBiz,
   saveReview,
@@ -12,8 +12,10 @@ const {
 
 const morgan = require('morgan');
 const cors = require('cors');
+
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(morgan('dev'));
 app.use(cors());
 // parse application/json
@@ -22,7 +24,10 @@ app.use(express.static('public'));
 
 // Changes to the URL in UI should allow for new review's by bId pull
 app.use('/reviews/:bId', express.static('public'));
-
+const handler = serverNum => (req, res) => {
+  console.log(`server ${serverNum}`, req.method, req.url, req.body);
+  res.send(`Hello from server ${serverNum}!`);
+ };
 
 /**
  * CRUD APIs

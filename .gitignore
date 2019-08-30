@@ -4,3 +4,6 @@ bundle.js
 coverage
 ReviewsandUsers.pem
 .DS_Store
+
+## new Relic
+newrelic.js
