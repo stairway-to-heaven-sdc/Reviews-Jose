@@ -27,8 +27,8 @@ const ReviewsService = (props) => {
         setReviews(data)
       });
     }
-    // axios.get(`/biz/${bizId}`)
-    // .then(({data}) => setBiz(data));
+    axios.get(`/biz/${bizId}`)
+    .then(({data}) => setBiz(data));
 
   },[]);
 

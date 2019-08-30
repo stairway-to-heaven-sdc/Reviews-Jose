@@ -6,13 +6,9 @@
   "scripts": {
     "test": "jest --coverage",
     "seed": "node db/mongodbReviews.js",
-<<<<<<< HEAD
     "seed2": "node db/seedUsers.js",
-=======
-    "seed2": "mongo random --eval \"var arg1=50000000;arg2=1\" create_random.js",
->>>>>>> mysqlB
     "start": "nodemon server/server.js",
-    "build:dev": "webpack --config webpack.dev.js --watch",
+    "build-dev": "webpack --config webpack.dev.js --watch",
     "build": "webpack --config webpack.prod.js --watch"
   },
   "repository": {
@@ -46,6 +42,7 @@
   },
   "dependencies": {
     "@elastic/elasticsearch": "^7.0.0",
+    "artillery": "^1.6.0-28",
     "axios": "^0.19.0",
     "cors": "^2.8.5",
     "csv-parser": "^2.3.0",
@@ -57,6 +54,8 @@
     "mongodb": "^3.2.4",
     "mongoose": "^5.5.7",
     "morgan": "^1.9.1",
+    "newrelic": "^5.11.0",
+    "pm2": "^3.5.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
