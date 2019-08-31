@@ -59,6 +59,7 @@ const generateReviews = async (num) => {
     csvWriter.writeRecords(reviews)
       .then(() => {
         // run script until 10million bId records created.
+        console.log(count, `testing count`);
         count = count + 500000;
         if (count < 10000001) {
           seed(count);
