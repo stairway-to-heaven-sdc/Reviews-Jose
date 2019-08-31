@@ -26,7 +26,7 @@ const csvWriter =  createCsvWriter({
 const generateReviews = async (num) => {
     const ratingOptions = [1,2,3,4,5];
     const checkinOptions = [0, 1];
-    let goalNum = num + 199999; 
+    let goalNum = num + 9999; 
     let reviews = [];
     for (let i = num; i <= goalNum; i++) {
   
@@ -60,7 +60,7 @@ const generateReviews = async (num) => {
       .then(() => {
         // run script until 10million bId records created.
         console.log(count, `testing count`);
-        count = count + 200000;
+        count = count + 1000;
         if (count < 10000001) {
           seed(count);
         }
