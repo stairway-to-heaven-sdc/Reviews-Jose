@@ -1,11 +1,13 @@
 const mysql = require('mysql');
 const util = require('util');
+require('dotenv').config()
 
 const pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    host: process.env.DB_HOST,
+    port: '3306',
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
     database: 'yelp',
   });
   pool.getConnection((err, connection) => {
@@ -20,7 +22,10 @@ const pool = mysql.createPool({
             console.error('Database connection was refused.')
         }
     }
-    if (connection) connection.release()
+    if (connection) {
+      console.log('connected to mysql')
+      connection.release()
+    }
     return
 });
 
@@ -35,6 +40,7 @@ const retrieveByBiz = async (bId) => {
 
   } catch(err) {
     console.log(err);
+    return err;
   }
 };
 

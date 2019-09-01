@@ -40,7 +40,8 @@ app.get('/reviews/business/:bId', async (req, res, next) => {
     const reviews = await retrieveByBiz(bId)
     // res.send(reviews);
     res.status(200).send(reviews);
-  } catch {
+  } catch (err) {
+    console.log(err)
     res.send(404)
   }
 });
