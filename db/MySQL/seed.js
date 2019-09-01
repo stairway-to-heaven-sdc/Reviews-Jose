@@ -61,7 +61,7 @@ const generateReviews = async (num) => {
         // run script until 10million bId records created.
         console.log(count, `testing count`);
         count = count + 300000;
-        if (count < 7000001) {
+        if (count < 600001) {
           seed(count);
         }
       });
